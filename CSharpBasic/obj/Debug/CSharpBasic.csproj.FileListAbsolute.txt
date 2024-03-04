@@ -1,0 +1,8 @@
+C:\Users\Admin\source\repos\BE_032024\CSharpBasic\bin\Debug\CSharpBasic.exe.config
+C:\Users\Admin\source\repos\BE_032024\CSharpBasic\bin\Debug\CSharpBasic.exe
+C:\Users\Admin\source\repos\BE_032024\CSharpBasic\bin\Debug\CSharpBasic.pdb
+C:\Users\Admin\source\repos\BE_032024\CSharpBasic\obj\Debug\CSharpBasic.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_032024\CSharpBasic\obj\Debug\CSharpBasic.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\source\repos\BE_032024\CSharpBasic\obj\Debug\CSharpBasic.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_032024\CSharpBasic\obj\Debug\CSharpBasic.exe
+C:\Users\Admin\source\repos\BE_032024\CSharpBasic\obj\Debug\CSharpBasic.pdb
