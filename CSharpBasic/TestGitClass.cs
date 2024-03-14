@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace CSharpBasic
 {
-    internal class TestGitClass
+    public class TestGitClass : FunctionCSharp
     {
+        public int Test()
+        {
+            var funct = new TestGitClass();
+            funct.Tong(10, 120);
+
+            return 1;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -64,14 +65,47 @@ namespace CSharpBasic
         static void Main(string[] args)
         {
 
-            var func = new FunctionCSharp();
-            int ketqua = func.Tong(10, 0);
+            var func = new GenericFunction<int>();
+            int tong_int = func.Tong(10, 19);
 
+
+            var func2 = new GenericFunction<long>();
+            long tong_long = func2.Tong(10, 19);
+
+            var func3 = new GenericFunction<float>();
+            float tong_float = func3.Tong(10, 19);
+
+            GenericClass<int> intGenericClass = new GenericClass<int>(86);
+            intGenericClass.genericProperty = 2017;
+            int intVal = intGenericClass.genericMethod(2019);
+
+            GenericClass<string> strGenericClass = new GenericClass<string>("Welcome to");
+            strGenericClass.genericProperty = "Lop ASPNET";
+            string strVal = strGenericClass.genericMethod("MR QUAN");
+
+            var arrayList = new ArrayList() { 1, "abc", true };
+            arrayList.Reverse();
+
+            var arrayList1 = new ArrayList();
+            arrayList1.Add(1);
+            arrayList1.Add("string");
+            
+
+            foreach (var item in arrayList)
+            {
+                Console.WriteLine("item array list : " + item);
+            }
+
+            var dictionary = new Dictionary<string, string>();
+            dictionary.Add("malop", "NETCORE1");
+            dictionary.Add("test", "abc");
+
+            var dictionaryObj = new Dictionary<string, object>();
 
             var static_Demo = StaticDemo.TongStaticDemo();
 
-            var today = new DateTime(2024,03,11);
-            Console.WriteLine("today = {0}: ",today.ToString("dd/MM/yyyy"));
+            var today = new DateTime(2024, 03, 11);
+            Console.WriteLine("today = {0}: ", today.ToString("dd/MM/yyyy"));
             Console.WriteLine("day of week = {0}: ", today.DayOfWeek);
 
             Console.WriteLine("Next day = {0}: ", today.AddDays(1));
@@ -94,7 +128,7 @@ namespace CSharpBasic
 
             string date_string = "11/03/2024";
             var date_from_text = DateTime.ParseExact(date_string, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-           
+
             Console.WriteLine("date_from_texts = {0}: ", date_from_text.AddDays(2));
 
             var arr = date_string.Split('/');

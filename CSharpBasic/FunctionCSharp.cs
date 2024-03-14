@@ -9,7 +9,7 @@ namespace CSharpBasic
 {
     public class FunctionCSharp
     {
-        public int Tong(int a, int b)
+        protected int Tong(int a, int b)
         {
             var result = 0;
             try // + tab 2 lần
@@ -26,7 +26,42 @@ namespace CSharpBasic
 
             return result;
         }
+        protected long Tong(int a)
+        {
+            var result = 0;
+            try // + tab 2 lần
+            {
+                // ValidateNumber(a);
+                result = a *10;
+            }
+            catch (InvalidStudentNameException ex)
+            {
+                var msg = ex.Message;
+                var stacktrace = ex.StackTrace;
+                throw;
+            }
 
+            return result;
+        }
+        protected int Tong(int a, int b,int c)
+        {
+            var result = 0;
+            try // + tab 2 lần
+            {
+                // ValidateNumber(a);
+                result = a * b;
+            }
+            catch (InvalidStudentNameException ex)
+            {
+                var msg = ex.Message;
+                var stacktrace = ex.StackTrace;
+                throw;
+            }
+
+            return result;
+        }
+
+        
 
         private void ValidateNumber(int a)
         {
