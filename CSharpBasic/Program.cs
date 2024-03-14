@@ -97,7 +97,6 @@ namespace CSharpBasic
            
             Console.WriteLine("date_from_texts = {0}: ", date_from_text.AddDays(2));
 
-
             var arr = date_string.Split('/');
             foreach (var item in arr)
             {
