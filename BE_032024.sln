@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE_032024", "BE_032024\BE_032024.csproj", "{B7F6907E-000D-46AA-B065-6F5B75A74DB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BE_032024", "BE_032024\BE_032024.csproj", "{B7F6907E-000D-46AA-B065-6F5B75A74DB8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpBasic", "CSharpBasic\CSharpBasic.csproj", "{248ECD05-187F-4D9F-977E-D32221E360CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.NetFrameWork", "DataAccess.NetFrameWork\DataAccess.NetFrameWork.csproj", "{C5A92603-68E3-45F0-8881-5B2AA49B256A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{248ECD05-187F-4D9F-977E-D32221E360CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{248ECD05-187F-4D9F-977E-D32221E360CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{248ECD05-187F-4D9F-977E-D32221E360CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5A92603-68E3-45F0-8881-5B2AA49B256A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A92603-68E3-45F0-8881-5B2AA49B256A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A92603-68E3-45F0-8881-5B2AA49B256A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A92603-68E3-45F0-8881-5B2AA49B256A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.NetFrameWork;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -64,6 +65,26 @@ namespace CSharpBasic
 
         static void Main(string[] args)
         {
+            var buscar = new XeKhach("TOYOTA", "LX580", 2023);
+            buscar.display_info();
+
+
+            //var buscar = new XeKhach();
+            //buscar.brand = "TOYOTA";
+            //buscar.model = "LX570";
+            //buscar.year = 2024;
+            //buscar.display_info();
+
+
+            var fatboy = new FatBoy();
+            fatboy.Run();
+            Console.WriteLine(" fatboy.Run() : " + fatboy.Run());
+
+            var thinboy = new ThinBoy();
+            thinboy.Run();
+
+            Console.WriteLine("thinboy.Run() : " + thinboy.Run());
+
 
             var func = new GenericFunction<int>();
             int tong_int = func.Tong(10, 19);
@@ -89,7 +110,7 @@ namespace CSharpBasic
             var arrayList1 = new ArrayList();
             arrayList1.Add(1);
             arrayList1.Add("string");
-            
+
 
             foreach (var item in arrayList)
             {

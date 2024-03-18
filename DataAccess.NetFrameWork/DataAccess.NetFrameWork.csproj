@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{248ECD05-187F-4D9F-977E-D32221E360CF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>CSharpBasic</RootNamespace>
-    <AssemblyName>CSharpBasic</AssemblyName>
+    <ProjectGuid>{C5A92603-68E3-45F0-8881-5B2AA49B256A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess.NetFrameWork</RootNamespace>
+    <AssemblyName>DataAccess.NetFrameWork</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,23 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FunctionCSharp.cs" />
-    <Compile Include="GenericClass.cs" />
-    <Compile Include="GenericFunction.cs" />
-    <Compile Include="InvalidStudentNameException.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Car.cs" />
+    <Compile Include="FatBoy.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaticDemo.cs" />
-    <Compile Include="TestGitClass.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataAccess.NetFrameWork\DataAccess.NetFrameWork.csproj">
-      <Project>{c5a92603-68e3-45f0-8881-5b2aa49b256a}</Project>
-      <Name>DataAccess.NetFrameWork</Name>
-    </ProjectReference>
+    <Compile Include="ThinBoy.cs" />
+    <Compile Include="XeKhach.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

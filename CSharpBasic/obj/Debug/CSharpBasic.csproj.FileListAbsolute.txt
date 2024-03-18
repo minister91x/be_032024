@@ -6,3 +6,6 @@ C:\Users\Admin\source\repos\BE_032024\CSharpBasic\obj\Debug\CSharpBasic.csproj.S
 C:\Users\Admin\source\repos\BE_032024\CSharpBasic\obj\Debug\CSharpBasic.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\BE_032024\CSharpBasic\obj\Debug\CSharpBasic.exe
 C:\Users\Admin\source\repos\BE_032024\CSharpBasic\obj\Debug\CSharpBasic.pdb
+C:\Users\Admin\source\repos\BE_032024\CSharpBasic\bin\Debug\DataAccess.NetFrameWork.dll
+C:\Users\Admin\source\repos\BE_032024\CSharpBasic\bin\Debug\DataAccess.NetFrameWork.pdb
+C:\Users\Admin\source\repos\BE_032024\CSharpBasic\obj\Debug\CSharpBasic.csproj.CopyComplete
