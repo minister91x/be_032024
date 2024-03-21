@@ -1,4 +1,5 @@
 ﻿using DataAccess.NetFrameWork;
+using DataAccess.NetFrameWork.Interface;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -65,6 +66,9 @@ namespace CSharpBasic
 
         static void Main(string[] args)
         {
+           
+
+
             var buscar = new XeKhach("TOYOTA", "LX580", 2023);
             buscar.display_info();
 
@@ -264,6 +268,22 @@ namespace CSharpBasic
             }
 
             Console.WriteLine("PrductName {0}: " + myArray.Max());
+
+            // ---------------------------------------------------------------------
+            // Bài số 6 : AbtractClass và Interface
+            var productManager = new ProductManager();
+
+            var list = productManager.GetAllProducts();
+            if (list.Count > 0)
+            {
+                foreach (var item in list)
+                {
+                    Console.WriteLine("item : " + item.Name);
+                }
+            }
+
+            var gui_Value = Guid.NewGuid().ToString();
+            Console.WriteLine("gui_Value : " + gui_Value);
             Console.ReadKey();
 
 

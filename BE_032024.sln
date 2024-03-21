@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpBasic", "CSharpBasic\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.NetFrameWork", "DataAccess.NetFrameWork\DataAccess.NetFrameWork.csproj", "{C5A92603-68E3-45F0-8881-5B2AA49B256A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibs", "CommonLibs\CommonLibs.csproj", "{670B3A38-0197-417E-B998-7E7D84F691DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C5A92603-68E3-45F0-8881-5B2AA49B256A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5A92603-68E3-45F0-8881-5B2AA49B256A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5A92603-68E3-45F0-8881-5B2AA49B256A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{670B3A38-0197-417E-B998-7E7D84F691DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670B3A38-0197-417E-B998-7E7D84F691DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670B3A38-0197-417E-B998-7E7D84F691DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670B3A38-0197-417E-B998-7E7D84F691DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

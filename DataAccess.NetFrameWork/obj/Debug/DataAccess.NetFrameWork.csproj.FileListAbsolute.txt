@@ -4,3 +4,6 @@ C:\Users\Admin\source\repos\BE_032024\DataAccess.NetFrameWork\obj\Debug\DataAcce
 C:\Users\Admin\source\repos\BE_032024\DataAccess.NetFrameWork\obj\Debug\DataAccess.NetFrameWork.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\BE_032024\DataAccess.NetFrameWork\obj\Debug\DataAccess.NetFrameWork.dll
 C:\Users\Admin\source\repos\BE_032024\DataAccess.NetFrameWork\obj\Debug\DataAccess.NetFrameWork.pdb
+C:\Users\Admin\source\repos\BE_032024\DataAccess.NetFrameWork\bin\Debug\CommonLibs.dll
+C:\Users\Admin\source\repos\BE_032024\DataAccess.NetFrameWork\bin\Debug\CommonLibs.pdb
+C:\Users\Admin\source\repos\BE_032024\DataAccess.NetFrameWork\obj\Debug\DataAccess.NetFrameWork.csproj.CopyComplete
