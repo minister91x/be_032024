@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Car.cs" />
     <Compile Include="FatBoy.cs" />
+    <Compile Include="Interface\IDemo.cs" />
     <Compile Include="Interface\IProductManager.cs" />
     <Compile Include="Interface\ProductManager.cs" />
     <Compile Include="Person.cs" />

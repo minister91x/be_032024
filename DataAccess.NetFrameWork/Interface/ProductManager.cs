@@ -92,6 +92,11 @@ namespace DataAccess.NetFrameWork.Interface
             }
         }
 
+        public int test()
+        {
+            throw new NotImplementedException();
+        }
+
         private List<Product> GetProducts()
         {
             var list = new List<Product>();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.NetFrameWork.Interface
 {
-    public interface IProductManager
+    public interface IProductManager : IDemo
     {
         List<Product> GetAllProducts();
         int ProductInsertUpdate(Product product);
