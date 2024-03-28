@@ -12,5 +12,10 @@ namespace DataAccess.NetFrameWork.Interface
         {
             return 1;
         }
+
+        public List<Account> GetAccounts()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

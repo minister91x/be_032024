@@ -9,5 +9,6 @@ namespace DataAccess.NetFrameWork.Interface
     public interface IAccount
     {
         int Account_Insert(Account account);
+        List<Account> GetAccounts();
     }
 }
