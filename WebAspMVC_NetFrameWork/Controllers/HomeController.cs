@@ -9,7 +9,7 @@ namespace WebAspMVC_NetFrameWork.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
             var model_return_view = new List<DemoModels>();
             for (int i = 0; i < 2; i++)
@@ -33,6 +33,49 @@ namespace WebAspMVC_NetFrameWork.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public JsonResult AccountInsert(AccountInsertRequestData requestData)
+        {
+            var returnData = new InsertAccountResponseDataa();
+            try
+            {
+                if (requestData == null ||
+                    string.IsNullOrEmpty(requestData.email)
+                    || string.IsNullOrEmpty(requestData.password))
+                {
+                    returnData.Code = -1;
+                    returnData.Description = "Dữ liệu đầu vào không hợp lệ";
+                    return Json(returnData, JsonRequestBehavior.AllowGet);
+
+                }
+
+                // INSERT DỮ LIỆU
+                // gọi interface
+
+                var req = new DataAccess.NetFrameWork.Account {
+                    email = requestData.email,
+                    password = requestData.password
+                };
+
+
+                var result = new DataAccess.NetFrameWork.Interface.AccountManagerment()
+                    .Account_Insert(req);
+
+
+
+                returnData.Code = 1;
+                returnData.Description = "Email : " + requestData.email + " | pass :" + requestData.password;
+                return Json(returnData, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+            return Json(returnData, JsonRequestBehavior.AllowGet);
         }
     }
 }

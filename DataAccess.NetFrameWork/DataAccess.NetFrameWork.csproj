@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="FatBoy.cs" />
+    <Compile Include="Interface\AccountManagerment.cs" />
+    <Compile Include="Interface\IAccount.cs" />
     <Compile Include="Interface\IDemo.cs" />
     <Compile Include="Interface\IProductManager.cs" />
     <Compile Include="Interface\ProductManager.cs" />

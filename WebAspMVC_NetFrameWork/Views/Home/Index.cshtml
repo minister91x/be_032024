@@ -3,7 +3,20 @@
 }
 @model List<WebAspMVC_NetFrameWork.Models.DemoModels>
 
-<div class="jumbotron">
+
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="text" class="form-control" id="txtEmail">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="txtPassWord">
+    </div>
+
+    <button type="button" class="btn btn-success" id="btnSubmit">Submit</button>
+
+
+<div class="jumbotron" style="margin-top:10px;">
 
     <table class="table">
         <thead>
@@ -28,3 +41,33 @@
         </tbody>
     </table>
 </div>
+
+<div id="noidung"></div>
+<script>
+    $(document).ready(function () {
+
+        $("#btnSubmit").click(function () {
+            debugger;
+
+            var email = $("#txtEmail").val();
+            var password = $("#txtPassWord").val();
+            var data = {
+                email: email,
+                password: password
+            };
+
+            $.ajax({
+                url: '/Home/AccountInsert',
+                type: 'POST',
+                dataType: 'json',
+                data: data
+            }).done(function (ketqua) {
+                alert(ketqua.Description);
+            });
+        });
+
+    });
+
+
+
+</script>

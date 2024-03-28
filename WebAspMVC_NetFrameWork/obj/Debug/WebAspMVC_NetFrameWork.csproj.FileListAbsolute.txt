@@ -77,3 +77,9 @@ C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\obj\Debug\WebAspMVC
 C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\obj\Debug\WebAspMVC_NetFrameWork.csproj.CopyComplete
 C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\obj\Debug\WebAspMVC_NetFrameWork.dll
 C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\obj\Debug\WebAspMVC_NetFrameWork.pdb
+C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\System.Net.Http.Formatting.dll
+C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\System.Web.Http.dll
+C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\System.Web.Http.WebHost.dll
+C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\System.Net.Http.Formatting.xml
+C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\System.Web.Http.xml
+C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\System.Web.Http.WebHost.xml

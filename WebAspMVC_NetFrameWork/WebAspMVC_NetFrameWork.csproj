@@ -134,8 +134,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountInsertRequestData.cs" />
     <Compile Include="Models\DemoModels.cs" />
     <Compile Include="Models\DemoModels2.cs" />
+    <Compile Include="Models\InsertAccountResponseDataa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +192,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess.NetFrameWork\DataAccess.NetFrameWork.csproj">
+      <Project>{c5a92603-68e3-45f0-8881-5b2aa49b256a}</Project>
+      <Name>DataAccess.NetFrameWork</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

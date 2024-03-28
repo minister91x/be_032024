@@ -13,11 +13,25 @@ namespace WebAspMVC_NetFrameWork
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            
+
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
+                name: Guid.NewGuid().ToString(),
+                url: "trang-chu",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: Guid.NewGuid().ToString(),
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+              name: "Default",
+              url: "{controller}/{action}/{id}",
+              defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+          );
         }
     }
 }
