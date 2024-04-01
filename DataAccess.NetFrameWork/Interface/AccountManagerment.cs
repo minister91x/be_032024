@@ -10,12 +10,36 @@ namespace DataAccess.NetFrameWork.Interface
     {
         public int Account_Insert(Account account)
         {
+            var list = GetListAccount();
+            list.Add(account);
             return 1;
         }
 
         public List<Account> GetAccounts()
         {
-            throw new NotImplementedException();
+            return GetListAccount();
+        }
+
+        public List<Account> GetListAccount()
+        {
+            var list = new List<Account>();
+            try
+            {
+
+
+                for (int i = 0; i < 10; i++)
+                {
+                    list.Add(new Account { Id = i, email = "aspnet" + i + "@gmail.com", password = "!@#$" + i });
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return list;
         }
     }
 }

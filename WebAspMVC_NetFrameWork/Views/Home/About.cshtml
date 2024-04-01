@@ -1,7 +1,60 @@
 ﻿@{
     ViewBag.Title = "About";
 }
+@{ 
+    var listmodel = new List<WebAspMVC_NetFrameWork.Models.DemoModels>();
+    for (int i = 0; i < 2; i++)
+    {
+        listmodel.Add(new WebAspMVC_NetFrameWork.Models.DemoModels { Id = i, Name = "name:" + i });
+    }
+}
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<p>Use this area to provide additional information. MR QUAN</p>
+@Html.Action("CommonPartialView", "Home", new { id = 10 })
+@Html.Partial("~/Views/Home/RenderPartialView.cshtml", listmodel)
+
+<div id="ListPartialViewData"></div>
+<button class="btn btn-success" id="btnSubmit">Bấm vào đây</button>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $("#btnSubmit").click(function () {
+            debugger;
+            LoadPartialView();
+            //var data = {
+            //    id: 1,
+            //    type: 12,
+            //    name: "MR"
+            //};
+
+            //$.ajax({
+            //    url: '/Home/About_Test',
+            //    type: 'POST',
+            //    dataType: 'json',
+            //    data: data
+            //}).done(function (ketqua) {
+            //    alert(ketqua.Description);
+            //});
+        });
+
+    });
+
+    function LoadPartialView() {
+
+        $.ajax({
+            url: '/Home/AjaxPartialView',
+            type: 'POST',
+            dataType: 'html',
+            data: {}
+        }).done(function (result) {
+            $("#ListPartialViewData").html("");
+            $("#ListPartialViewData").html(result);
+        });
+    }
+
+
+</script>

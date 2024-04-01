@@ -1,50 +1,32 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@model List<WebAspMVC_NetFrameWork.Models.DemoModels>
 
 
-    <div class="form-group">
-        <label for="email">Email address:</label>
-        <input type="text" class="form-control" id="txtEmail">
-    </div>
-    <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="txtPassWord">
-    </div>
 
-    <button type="button" class="btn btn-success" id="btnSubmit">Submit</button>
+<div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="text" class="form-control" id="txtEmail">
+</div>
+<div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="txtPassWord">
+</div>
+
+<button type="button" class="btn btn-success" id="btnSubmit">Thêm mới</button>
 
 
 <div class="jumbotron" style="margin-top:10px;">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @if (Model.Count > 0)
-            {
-                for (int i = 0; i < Model.Count; i++)
-                {
-                    var item = Model[i];
-                    <tr>
-                        <td>@item.Id</td>
-                        <td>@item.Name</td>
-                    </tr>
-                }
-            }
-        </tbody>
-    </table>
 </div>
+
+@*@Html.Action("CommonPartialView","Home")
+@Html.Partial("~/Views/Home/RenderPartialView.cshtml")*@
 
 <div id="noidung"></div>
 <script>
     $(document).ready(function () {
+        LoadAccountPartialView();
 
         $("#btnSubmit").click(function () {
             debugger;
@@ -63,11 +45,23 @@
                 data: data
             }).done(function (ketqua) {
                 alert(ketqua.Description);
+                LoadAccountPartialView();
             });
         });
 
     });
 
+    function LoadAccountPartialView() {
 
+        $.ajax({
+            url: '/Home/ListDataPartialView',
+            type: 'POST',
+            dataType: 'html',
+            data: {}
+        }).done(function (result) {
+            $("#noidung").html("");
+            $("#noidung").html(result);
+        });
+    }
 
 </script>

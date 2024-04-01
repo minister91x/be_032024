@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.NetFrameWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,12 +21,45 @@ namespace WebAspMVC_NetFrameWork.Controllers
 
             return View(model_return_view);// NÉM DỮ LIỆU TỪ TRONG MODEL LÊN VIEW 
         }
-
+        
+     
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return PartialView("");
+        }
+
+        public ActionResult CommonPartialView()
+        {
+            return PartialView();
+        }
+
+        public ActionResult AjaxPartialView()
+        {
+            return PartialView();
+        }
+
+        public ActionResult ListDataPartialView()
+        {
+            var list = new List<Account>();
+            try
+            {
+                list = new DataAccess.NetFrameWork.Interface.AccountManagerment().GetAccounts();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            return PartialView(list);
+        }
+
+        [ActionName("abc")]
+        public JsonResult About_Test(int id , int type)
+        {
+            var returnData = new InsertAccountResponseDataa();
+            return Json(returnData, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Contact()
@@ -35,6 +69,7 @@ namespace WebAspMVC_NetFrameWork.Controllers
             return View();
         }
 
+        [HttpPost]
         public JsonResult AccountInsert(AccountInsertRequestData requestData)
         {
             var returnData = new InsertAccountResponseDataa();
@@ -53,7 +88,8 @@ namespace WebAspMVC_NetFrameWork.Controllers
                 // INSERT DỮ LIỆU
                 // gọi interface
 
-                var req = new DataAccess.NetFrameWork.Account {
+                var req = new DataAccess.NetFrameWork.Account
+                {
                     email = requestData.email,
                     password = requestData.password
                 };
@@ -77,5 +113,7 @@ namespace WebAspMVC_NetFrameWork.Controllers
 
             return Json(returnData, JsonRequestBehavior.AllowGet);
         }
+
+
     }
 }

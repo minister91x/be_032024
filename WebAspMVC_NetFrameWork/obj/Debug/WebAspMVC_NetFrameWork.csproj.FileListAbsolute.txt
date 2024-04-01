@@ -83,3 +83,7 @@ C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\System.Web.Http
 C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\System.Net.Http.Formatting.xml
 C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\System.Web.Http.xml
 C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\System.Web.Http.WebHost.xml
+C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\DataAccess.NetFrameWork.dll
+C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\CommonLibs.dll
+C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\DataAccess.NetFrameWork.pdb
+C:\Users\Admin\source\repos\BE_032024\WebAspMVC_NetFrameWork\bin\CommonLibs.pdb

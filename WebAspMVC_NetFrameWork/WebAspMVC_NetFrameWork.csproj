@@ -176,6 +176,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\CommonPartialView.cshtml" />
+    <Content Include="Views\Home\RenderPartialView.cshtml" />
+    <Content Include="Views\Home\AjaxPartialView.cshtml" />
+    <Content Include="Views\Home\ListDataPartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

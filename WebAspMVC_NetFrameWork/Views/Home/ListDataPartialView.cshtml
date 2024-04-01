@@ -1,0 +1,23 @@
+﻿@model List<DataAccess.NetFrameWork.Account>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (Model.Count > 0)
+        {
+            for (int i = 0; i < Model.Count; i++)
+            {
+                var item = Model[i];
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.email</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
