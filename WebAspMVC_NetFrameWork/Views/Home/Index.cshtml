@@ -15,7 +15,7 @@
 
 <button type="button" class="btn btn-success" id="btnSubmit">Thêm mới</button>
 
-
+<button type="button" class="btn btn-success" id="btnSubmitUpate">Thêm mới</button>
 <div class="jumbotron" style="margin-top:10px;">
 
 </div>
@@ -43,6 +43,27 @@
                 type: 'POST',
                 dataType: 'json',
                 data: data
+            }).done(function (ketqua) {
+                alert(ketqua.Description);
+                LoadAccountPartialView();
+            });
+        });
+
+        $("#btnSubmitUpate").click(function () {
+            debugger;
+
+            var email = $("#txtEmail").val();
+            var password = $("#txtPassWord").val();
+            var account = {
+                email: email,
+                password: password
+            };
+
+            $.ajax({
+                url: '/Home/EditAccount',
+                type: 'POST',
+                dataType: 'html',
+                data: account
             }).done(function (ketqua) {
                 alert(ketqua.Description);
                 LoadAccountPartialView();

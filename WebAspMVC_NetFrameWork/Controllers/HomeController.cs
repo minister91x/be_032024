@@ -69,6 +69,20 @@ namespace WebAspMVC_NetFrameWork.Controllers
             return View();
         }
 
+
+        public ActionResult EditAccount(Account account)
+        {
+            var state = ModelState.IsValid;
+
+            if (!ModelState.IsValid)
+            {
+               
+            }
+            return View();
+        }
+
+
+
         [HttpPost]
         public JsonResult AccountInsert(AccountInsertRequestData requestData)
         {
@@ -82,8 +96,15 @@ namespace WebAspMVC_NetFrameWork.Controllers
                     returnData.Code = -1;
                     returnData.Description = "Dữ liệu đầu vào không hợp lệ";
                     return Json(returnData, JsonRequestBehavior.AllowGet);
-
                 }
+
+                if (CommonLibs.Sercurity.HasXssFilterChars(requestData.email))
+                {
+                    returnData.Code = -1;
+                    returnData.Description = "email không được chứa thẻ html , < .... ";
+                    return Json(returnData, JsonRequestBehavior.AllowGet);
+                }
+            
 
                 // INSERT DỮ LIỆU
                 // gọi interface

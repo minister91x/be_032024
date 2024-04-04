@@ -198,6 +198,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonLibs\CommonLibs.csproj">
+      <Project>{670b3a38-0197-417e-b998-7e7d84f691dd}</Project>
+      <Name>CommonLibs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess.NetFrameWork\DataAccess.NetFrameWork.csproj">
       <Project>{c5a92603-68e3-45f0-8881-5b2aa49b256a}</Project>
       <Name>DataAccess.NetFrameWork</Name>
