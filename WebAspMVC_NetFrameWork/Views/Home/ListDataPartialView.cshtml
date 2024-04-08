@@ -1,4 +1,4 @@
-﻿@model List<DataAccess.NetFrameWork.Account>
+﻿@model List<DataAccess.NetFrameWork.DTO.Post>
 <table class="table">
     <thead>
         <tr>
@@ -14,8 +14,8 @@
             {
                 var item = Model[i];
                 <tr>
-                    <td>@item.Id</td>
-                    <td>@item.email</td>
+                    <td>@item.PostID</td>
+                    <td>@item.PostName</td>
                 </tr>
             }
         }

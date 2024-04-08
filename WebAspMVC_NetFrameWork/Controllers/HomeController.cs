@@ -1,4 +1,5 @@
 ﻿using DataAccess.NetFrameWork;
+using DataAccess.NetFrameWork.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,17 +13,20 @@ namespace WebAspMVC_NetFrameWork.Controllers
     {
         public ActionResult Index(string id)
         {
-            var model_return_view = new List<DemoModels>();
-            for (int i = 0; i < 2; i++)
+            var model_return_view = new List<Post>();
+            try
             {
-                model_return_view.Add(new DemoModels { Id = i, Name = "LOP ASP NET MVC NGAY : " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") });
+                model_return_view = new DataAccess.NetFrameWork.DAOImpl.PostDAOImpl().GetPosts();
             }
-
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
             return View(model_return_view);// NÉM DỮ LIỆU TỪ TRONG MODEL LÊN VIEW 
         }
-        
-     
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -42,21 +46,33 @@ namespace WebAspMVC_NetFrameWork.Controllers
 
         public ActionResult ListDataPartialView()
         {
-            var list = new List<Account>();
+            //var list = new List<Account>();
+            //try
+            //{
+            //    list = new DataAccess.NetFrameWork.Interface.AccountManagerment().GetAccounts();
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    throw;
+            //}
+            //return PartialView(list);
+
+            var model_return_view = new List<Post>();
             try
             {
-                list = new DataAccess.NetFrameWork.Interface.AccountManagerment().GetAccounts();
+                model_return_view = new DataAccess.NetFrameWork.DAOImpl.PostDAOImpl().GetPosts();
             }
             catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-            return PartialView(list);
+
+            return PartialView(model_return_view);// NÉM DỮ LIỆU TỪ TRONG MODEL LÊN VIEW 
         }
 
         [ActionName("abc")]
-        public JsonResult About_Test(int id , int type)
+        public JsonResult About_Test(int id, int type)
         {
             var returnData = new InsertAccountResponseDataa();
             return Json(returnData, JsonRequestBehavior.AllowGet);
@@ -76,7 +92,7 @@ namespace WebAspMVC_NetFrameWork.Controllers
 
             if (!ModelState.IsValid)
             {
-               
+
             }
             return View();
         }
@@ -104,23 +120,28 @@ namespace WebAspMVC_NetFrameWork.Controllers
                     returnData.Description = "email không được chứa thẻ html , < .... ";
                     return Json(returnData, JsonRequestBehavior.AllowGet);
                 }
-            
+
 
                 // INSERT DỮ LIỆU
                 // gọi interface
 
-                var req = new DataAccess.NetFrameWork.Account
+                //var req = new DataAccess.NetFrameWork.Account
+                //{
+                //    email = requestData.email,
+                //    password = requestData.password
+                //};
+
+
+                //var result = new DataAccess.NetFrameWork.Interface.AccountManagerment()
+                //    .Account_Insert(req);
+
+                var post_req = new Post
                 {
-                    email = requestData.email,
-                    password = requestData.password
+                    PostName = requestData.password
                 };
 
-
-                var result = new DataAccess.NetFrameWork.Interface.AccountManagerment()
-                    .Account_Insert(req);
-
-
-
+                var result = new DataAccess.NetFrameWork.DAOImpl.PostDAOImpl().Post_Insert(post_req);
+                  
                 returnData.Code = 1;
                 returnData.Description = "Email : " + requestData.email + " | pass :" + requestData.password;
                 return Json(returnData, JsonRequestBehavior.AllowGet);
