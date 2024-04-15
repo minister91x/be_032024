@@ -1,3 +1,5 @@
+using BE_032024;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,8 +18,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//app.Run(async context =>
+//{
+//    await context.Response.WriteAsync("Hello world!");
+//});
+//app.UseMiddleware<MyCustomMiddleWare>();
+app.UseMy_CustomeMiddleware();
+
 app.UseAuthorization();
 
+app.UseHttpsRedirection();
+
+app.UseStaticFiles();
 app.MapControllers();
 
 app.Run();
