@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DataAccess.NetCore.DAO;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BE_032024.Controllers
@@ -8,9 +9,30 @@ namespace BE_032024.Controllers
     public class HomeController : ControllerBase
     {
         private readonly IConfiguration _configuration;
-        public HomeController(IConfiguration configuration)
+
+        private readonly IPostDAO _postDAO;
+        public HomeController(IConfiguration configuration, IPostDAO postDAO)//tiêm vào contructor
         {
-            _configuration = configuration; 
+            _configuration = configuration;
+            _postDAO = postDAO;
+        }
+
+
+        [HttpPost("GetPost")]
+
+        public async Task<ActionResult> GetPost()
+        {
+            try
+            {
+                var listPost = await _postDAO.GetPost();
+
+                return Ok(listPost);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         [HttpGet("GetConfig")]

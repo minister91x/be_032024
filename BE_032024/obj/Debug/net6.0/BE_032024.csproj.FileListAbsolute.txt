@@ -25,3 +25,5 @@ C:\Users\Admin\source\repos\BE_032024\BE_032024\obj\Debug\net6.0\refint\BE_03202
 C:\Users\Admin\source\repos\BE_032024\BE_032024\obj\Debug\net6.0\BE_032024.pdb
 C:\Users\Admin\source\repos\BE_032024\BE_032024\obj\Debug\net6.0\BE_032024.genruntimeconfig.cache
 C:\Users\Admin\source\repos\BE_032024\BE_032024\obj\Debug\net6.0\ref\BE_032024.dll
+C:\Users\Admin\source\repos\BE_032024\BE_032024\bin\Debug\net6.0\DataAccess.NetCore.dll
+C:\Users\Admin\source\repos\BE_032024\BE_032024\bin\Debug\net6.0\DataAccess.NetCore.pdb

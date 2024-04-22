@@ -1,3 +1,5 @@
+using WebMVC_NetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,6 +12,7 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
+app.UseMiddleware<MyCustomMiddleWare>();
 app.UseStaticFiles();
 
 app.UseRouting();
