@@ -1,8 +1,10 @@
 ﻿using DataAccess.NetFrameWork;
 using DataAccess.NetFrameWork.DTO;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using WebAspMVC_NetFrameWork.Models;
@@ -44,7 +46,7 @@ namespace WebAspMVC_NetFrameWork.Controllers
             return PartialView();
         }
 
-        public ActionResult ListDataPartialView()
+        public async Task<ActionResult> ListDataPartialView(GetListPostRequestData requestData)
         {
             //var list = new List<Account>();
             //try
@@ -58,10 +60,26 @@ namespace WebAspMVC_NetFrameWork.Controllers
             //}
             //return PartialView(list);
 
-            var model_return_view = new List<Post>();
+            var model_return_view = new List<ListPostResponseData>();
             try
             {
-                model_return_view = new DataAccess.NetFrameWork.DAOImpl.PostDAOImpl().GetPosts();
+                // đọc url api từ config
+                //B1 :chuẩn bị dữ liệu
+                var url = System.Configuration.ConfigurationManager.AppSettings["API_URL"] ?? "";
+                var baseUrl = "/api/Home/GetPost"; // http://localhost:5168/api/Home/GetPost'
+                var jsonData = JsonConvert.SerializeObject(requestData);
+
+                // gọi api netcore 
+                var result = await CommonLibs.HttpHelper.SendPost(url, baseUrl, jsonData);
+
+                // B2: nhận về kết quả
+                if (!string.IsNullOrEmpty(result))
+                {
+                    // đưa json nhận dược sang List<Post>
+                    model_return_view = JsonConvert.DeserializeObject<List<ListPostResponseData>>(result);
+                }
+
+                // model_return_view = new DataAccess.NetFrameWork.DAOImpl.PostDAOImpl().GetPosts();
             }
             catch (Exception ex)
             {
@@ -141,7 +159,7 @@ namespace WebAspMVC_NetFrameWork.Controllers
                 };
 
                 var result = new DataAccess.NetFrameWork.DAOImpl.PostDAOImpl().Post_Insert(post_req);
-                  
+
                 returnData.Code = 1;
                 returnData.Description = "Email : " + requestData.email + " | pass :" + requestData.password;
                 return Json(returnData, JsonRequestBehavior.AllowGet);

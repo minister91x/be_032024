@@ -137,7 +137,9 @@
     <Compile Include="Models\AccountInsertRequestData.cs" />
     <Compile Include="Models\DemoModels.cs" />
     <Compile Include="Models\DemoModels2.cs" />
+    <Compile Include="Models\GetListPostRequestData.cs" />
     <Compile Include="Models\InsertAccountResponseDataa.cs" />
+    <Compile Include="Models\ListPostResponseData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

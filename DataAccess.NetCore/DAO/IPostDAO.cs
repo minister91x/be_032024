@@ -9,6 +9,6 @@ namespace DataAccess.NetCore.DAO
 {
     public interface IPostDAO
     {
-        Task<List<Post>> GetPost();
+        Task<List<Post>> GetPost(GetListPostRequestData requestData);
     }
 }

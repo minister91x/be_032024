@@ -1,10 +1,14 @@
 using BE_032024;
 using DataAccess.NetCore.DAO;
 using DataAccess.NetCore.DAOImpl;
+using DataAccess.NetCore.DbContext;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var configuration = builder.Configuration;
 // Add services to the container.
+builder.Services.AddDbContext<EShopDbContext>(options =>
+               options.UseSqlServer(configuration.GetConnectionString("ConnStr")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

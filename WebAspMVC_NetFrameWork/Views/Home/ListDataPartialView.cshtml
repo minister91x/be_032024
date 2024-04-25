@@ -1,4 +1,4 @@
-﻿@model List<DataAccess.NetFrameWork.DTO.Post>
+﻿@model List<WebAspMVC_NetFrameWork.Models.ListPostResponseData>
 <table class="table">
     <thead>
         <tr>
@@ -14,8 +14,8 @@
             {
                 var item = Model[i];
                 <tr>
-                    <td>@item.PostID</td>
-                    <td>@item.PostName</td>
+                    <td>@item.postID</td>
+                    <td>@item.postName</td>
                 </tr>
             }
         }

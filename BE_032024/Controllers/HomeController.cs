@@ -1,4 +1,5 @@
 ﻿using DataAccess.NetCore.DAO;
+using DataAccess.NetCore.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,11 +21,11 @@ namespace BE_032024.Controllers
 
         [HttpPost("GetPost")]
 
-        public async Task<ActionResult> GetPost()
+        public async Task<ActionResult> GetPost(GetListPostRequestData requestData)
         {
             try
             {
-                var listPost = await _postDAO.GetPost();
+                var listPost = await _postDAO.GetPost(requestData);
 
                 return Ok(listPost);
             }

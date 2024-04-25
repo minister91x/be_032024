@@ -11,4 +11,9 @@ namespace DataAccess.NetCore.DTO
         public int PostID { get; set; }
         public string PostName { get; set; }
     }
+
+    public class GetListPostRequestData
+    {
+        public string? PostName { get; set; }
+    }
 }
