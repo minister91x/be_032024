@@ -54,7 +54,7 @@ namespace BE_032024.Controllers
 
                     return Ok(returnData);
                 }
-
+                //
                 //2.2 trả về Thông tin Token
 
                 // 2.2.0 tạo claim để lưu dữ liệu của user ( fullname , userid)
