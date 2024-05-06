@@ -2,19 +2,42 @@ using BE_032024;
 using DataAccess.NetCore.DAO;
 using DataAccess.NetCore.DAOImpl;
 using DataAccess.NetCore.DbContext;
+using DataAccess.NetCore.UnitOfWork;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 // Add services to the container.
 builder.Services.AddDbContext<EShopDbContext>(options =>
                options.UseSqlServer(configuration.GetConnectionString("ConnStr")));
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:ValidIssuer"],
+        ValidAudience = builder.Configuration["Jwt:ValidAudience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]))
+    };
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddTransient<IPostDAO, PostDAOImpl>();
+builder.Services.AddTransient<IPostRepository, PostRepository>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient<IProductGenerictRepository, ProductGenericRepository>();
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -29,8 +52,9 @@ if (app.Environment.IsDevelopment())
 //    await context.Response.WriteAsync("Hello world!");
 //});
 //app.UseMiddleware<MyCustomMiddleWare>();
-app.UseMy_CustomeMiddleware();
+//app.UseMy_CustomeMiddleware();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseHttpsRedirection();

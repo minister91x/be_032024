@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.NetCore.DAO
 {
-    public interface IPostDAO
+    public interface IUserRepository
     {
-        Task<List<Post>> GetPost(GetListPostRequestData requestData);
+        Task<User> Login(UserLogin_RequestData requestData);
+        Task<int> UpdateRefreshTokenExpired(UpdateRefreshTokenExpired_RequestData requestData);
     }
 }

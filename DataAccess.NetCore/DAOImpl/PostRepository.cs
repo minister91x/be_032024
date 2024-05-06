@@ -9,12 +9,24 @@ using System.Threading.Tasks;
 
 namespace DataAccess.NetCore.DAOImpl
 {
-    public class PostDAOImpl : IPostDAO
+    public class PostRepository : IPostRepository
     {
         private EShopDbContext _dbContext;
-        public PostDAOImpl(EShopDbContext dbContext)
+        public PostRepository(EShopDbContext dbContext)
         {
             _dbContext = dbContext;
+        }
+
+        public async void CreatePost(Post post)
+        {
+            try
+            {
+                _dbContext.post.Add(post);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<List<Post>> GetPost(GetListPostRequestData requestData)

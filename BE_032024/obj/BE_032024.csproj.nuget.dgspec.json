@@ -28,6 +28,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\Admin\\source\\repos\\BE_032024\\CommonLibs\\CommonLibs.csproj": {
+                "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_032024\\CommonLibs\\CommonLibs.csproj"
+              },
               "C:\\Users\\Admin\\source\\repos\\BE_032024\\DataAccess.NetCore\\DataAccess.NetCore.csproj": {
                 "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_032024\\DataAccess.NetCore\\DataAccess.NetCore.csproj"
               }
@@ -44,6 +47,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.29, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -69,6 +76,21 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\Admin\\source\\repos\\BE_032024\\CommonLibs\\CommonLibs.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\BE_032024\\CommonLibs\\CommonLibs.csproj",
+        "projectName": "CommonLibs",
+        "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_032024\\CommonLibs\\CommonLibs.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
       }
     },
     "C:\\Users\\Admin\\source\\repos\\BE_032024\\DataAccess.NetCore\\DataAccess.NetCore.csproj": {

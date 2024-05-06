@@ -1,5 +1,6 @@
 ﻿using DataAccess.NetCore.DAO;
 using DataAccess.NetCore.DTO;
+using DataAccess.NetCore.UnitOfWork;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,13 +12,20 @@ namespace BE_032024.Controllers
     {
         private readonly IConfiguration _configuration;
 
-        private readonly IPostDAO _postDAO;
-        public HomeController(IConfiguration configuration, IPostDAO postDAO)//tiêm vào contructor
+        //private readonly IPostRepository _postDAO;
+        //public HomeController(IConfiguration configuration, IPostRepository postDAO)//tiêm vào contructor
+        //{
+        //    _configuration = configuration;
+        //    _postDAO = postDAO;
+        //}
+
+
+        private IUnitOfWork _unitOfWork;
+        public HomeController(IUnitOfWork unitOfWork, IConfiguration configuration)
         {
             _configuration = configuration;
-            _postDAO = postDAO;
+            _unitOfWork = unitOfWork;
         }
-
 
         [HttpPost("GetPost")]
 
@@ -25,7 +33,7 @@ namespace BE_032024.Controllers
         {
             try
             {
-                var listPost = await _postDAO.GetPost(requestData);
+                var listPost = await _unitOfWork._postRepository.GetPost(requestData);
 
                 return Ok(listPost);
             }
@@ -36,13 +44,22 @@ namespace BE_032024.Controllers
             }
         }
 
-        [HttpGet("GetConfig")]
-        public async Task<ActionResult> GetConfig()
+        [HttpPost("CreatePost")]
+        public async Task<ActionResult> CreatePost(Post post)
         {
             try
             {
-                var values = _configuration["ConnectionStrings:MyConnection"] ?? "";
-                return Ok(values);
+                _unitOfWork._postRepository.CreatePost(post);
+                var p = new Product
+                {
+                    ProductName = "P_" + post.PostName
+                };
+
+                _unitOfWork._productGenerictRepository.Add(p);
+
+                var rs = _unitOfWork.SaveChange();
+
+                return Ok(rs);
             }
             catch (Exception ex)
             {

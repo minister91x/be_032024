@@ -15,6 +15,8 @@ namespace DataAccess.NetCore.DbContext
         }
         protected override void OnModelCreating(ModelBuilder builder) { base.OnModelCreating(builder); }
         public DbSet<Post>? post { get; set; }
+        public DbSet<Product> product { get; set; }
+        public DbSet<User> user { get; set; }
     }
-    
+
 }
