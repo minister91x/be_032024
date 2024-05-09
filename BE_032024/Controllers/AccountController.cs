@@ -74,7 +74,7 @@ namespace BE_032024.Controllers
 
                 // 2.2.2 TẠO refeshtoken VÀ UPDATE lại vào databae
                 var refreshToken = GenerateRefreshToken();
-               
+
                 var expriredDateSettingDay = _configuration["JWT:RefreshTokenValidityInDays"] ?? "";
 
                 var request = new UpdateRefreshTokenExpired_RequestData
@@ -91,7 +91,9 @@ namespace BE_032024.Controllers
                     userName = user.UserName,
                     token = token,
                     refeshToken = refreshToken,
-                    IsAdmin = user.IsAdmin
+                    IsAdmin = user.IsAdmin,
+                    ReturnCode = 1,
+                    ReturnMsg = "Đăng nhập thành công!"
                 };
 
                 return Ok(userLoginResponse);

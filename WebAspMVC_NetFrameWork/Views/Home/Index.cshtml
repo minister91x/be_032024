@@ -2,26 +2,51 @@
     ViewBag.Title = "Home Page";
 }
 
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Invoice</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Index</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
 
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
 
-<div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="text" class="form-control" id="txtEmail">
-</div>
-<div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="txtPassWord">
-</div>
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="text" class="form-control" id="txtEmail">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="txtPassWord">
+                </div>
 
-<button type="button" class="btn btn-success" id="btnSubmit">Thêm mới</button>
+                <button type="button" class="btn btn-success" id="btnSubmit">Thêm mới</button>
 
-<button type="button" class="btn btn-success" id="btnSubmitUpate">Thêm mới</button>
-<div class="jumbotron" style="margin-top:10px;">
+                <button type="button" class="btn btn-success" id="btnSubmitUpate">Thêm mới</button>
+                <div class="jumbotron" style="margin-top:10px;">
 
-</div>
+                </div>
+                <!-- /.invoice -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
 
 @*@Html.Action("CommonPartialView","Home")
-@Html.Partial("~/Views/Home/RenderPartialView.cshtml")*@
+    @Html.Partial("~/Views/Home/RenderPartialView.cshtml")*@
 
 <div id="noidung"></div>
 <script>

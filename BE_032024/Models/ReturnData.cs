@@ -6,7 +6,7 @@
         public string ReturnMsg { get; set; }
     }
 
-    public class UserLoginReturnData
+    public class UserLoginReturnData : ReturnData
     {
         public string userName { get; set; }
         public string token { get; set; }
