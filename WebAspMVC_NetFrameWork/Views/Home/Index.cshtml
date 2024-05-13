@@ -51,6 +51,7 @@
 <div id="noidung"></div>
 <script>
     $(document).ready(function () {
+        debugger;
         LoadAccountPartialView();
 
         $("#btnSubmit").click(function () {
@@ -98,7 +99,7 @@
     });
 
     function LoadAccountPartialView() {
-
+        debugger;
         $.ajax({
             url: '/Home/ListDataPartialView',
             type: 'POST',

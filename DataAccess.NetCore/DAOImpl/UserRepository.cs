@@ -17,6 +17,11 @@ namespace DataAccess.NetCore.DAOImpl
             _eShopDbContext = eShopDbContext;
         }
 
+        public async Task<Function> GetFunctionByCode(string functioncode)
+        {
+            return _eShopDbContext.function.Where(s => s.FunctionCode == functioncode).FirstOrDefault();
+        }
+
         public async Task<User> Login(UserLogin_RequestData requestData)
         {
             var user = new User();
@@ -55,6 +60,11 @@ namespace DataAccess.NetCore.DAOImpl
 
                 return result = -99;
             }
+        }
+
+        public async Task<UserFunction> UserFunctionGet(int UserId, int FunctionId)
+        {
+            return _eShopDbContext.userfunction.Where(s => s.UserId == UserId && s.FunctionID == FunctionId).FirstOrDefault();
         }
     }
 }

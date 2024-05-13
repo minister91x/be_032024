@@ -17,6 +17,9 @@ namespace DataAccess.NetCore.DbContext
         public DbSet<Post>? post { get; set; }
         public DbSet<Product> product { get; set; }
         public DbSet<User> user { get; set; }
+
+        public DbSet<Function> function { get; set; }
+        public DbSet<UserFunction> userfunction { get; set; }
     }
 
 }

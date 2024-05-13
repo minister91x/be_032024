@@ -11,5 +11,8 @@ namespace DataAccess.NetCore.DAO
     {
         Task<User> Login(UserLogin_RequestData requestData);
         Task<int> UpdateRefreshTokenExpired(UpdateRefreshTokenExpired_RequestData requestData);
+
+        Task<Function> GetFunctionByCode(string functioncode);
+        Task<UserFunction> UserFunctionGet(int UserId, int FunctionId);
     }
 }

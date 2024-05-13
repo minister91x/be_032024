@@ -68,16 +68,26 @@ namespace WebAspMVC_NetFrameWork.Controllers
                 var url = System.Configuration.ConfigurationManager.AppSettings["API_URL"] ?? "";
                 var baseUrl = "/api/Home/GetPost"; // http://localhost:5168/api/Home/GetPost'
                 var jsonData = JsonConvert.SerializeObject(requestData);
+                // lấy token từ Cookie và truyền lên API
+                var tokenfromCookies = Request.Cookies["EshopCookie"] != null ? Request.Cookies["EshopCookie"].Value : string.Empty;
 
                 // gọi api netcore 
-                var result = await CommonLibs.HttpHelper.SendPost(url, baseUrl, jsonData);
+                var result = await CommonLibs.HttpHelper.SendPostWithToken(url, baseUrl, tokenfromCookies, jsonData);
 
                 // B2: nhận về kết quả
-                if (!string.IsNullOrEmpty(result))
+
+
+                if (result.HttpCode == 200)
                 {
                     // đưa json nhận dược sang List<Post>
-                    model_return_view = JsonConvert.DeserializeObject<List<ListPostResponseData>>(result);
+                    model_return_view = JsonConvert.DeserializeObject<List<ListPostResponseData>>(result.HttpContent);
                 }
+                else
+                {
+                    ViewBag.HttpContent = result.HttpContent;
+                }
+
+
 
                 // model_return_view = new DataAccess.NetFrameWork.DAOImpl.PostDAOImpl().GetPosts();
             }

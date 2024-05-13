@@ -1,4 +1,5 @@
-﻿using DataAccess.NetCore.DAO;
+﻿using BE_032024.Author;
+using DataAccess.NetCore.DAO;
 using DataAccess.NetCore.DTO;
 using DataAccess.NetCore.UnitOfWork;
 using Microsoft.AspNetCore.Http;
@@ -28,7 +29,7 @@ namespace BE_032024.Controllers
         }
 
         [HttpPost("GetPost")]
-
+        [EShopAuthorize("GetPost","VIEW")]
         public async Task<ActionResult> GetPost(GetListPostRequestData requestData)
         {
             try
